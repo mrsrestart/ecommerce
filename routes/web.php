@@ -18,8 +18,12 @@ use Illuminate\Support\Facades\Route;
 //});
 Route::get('/',\App\Http\Livewire\HomeComponent::class);
 Route::get('/shop' , \App\Http\Livewire\ShopComponenet::class);
-Route::get('/cart' , \App\Http\Livewire\CartComponent::class);
+Route::get('/cart' , \App\Http\Livewire\CartComponent::class)->name('product.cart');
 Route::get('/checkout' , \App\Http\Livewire\CheckoutComponenet::class);
+Route::get('/product/{slug}' , \App\Http\Livewire\DetailsComponent::class)->name('product_detail');
+Route::get('/category/{category_slug}' , \App\Http\Livewire\CategoryComponent::class)->name('product.category');
+Route::get('/search' , \App\Http\Livewire\SearchComponent::class)->name('product.search');
+Route::get('/eshan' , \App\Http\Livewire\EhsanComponent::class)->name('product.ehsan');
 
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return view('dashboard');
